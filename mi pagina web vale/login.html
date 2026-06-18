@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Amigo Pc</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Lado izquierdo: Branding -->
+        <div class="login-branding">
+            <div class="branding-content">
+                <div class="logo">
+                    <h1>Amigo Pc</h1>
+                    <span>Enterprise Solutions</span>
+                </div>
+                <h2>Bienvenido de vuelta</h2>
+                <p>Accede a tu portal de cliente para gestionar tickets, facturas, licencias y reportes.</p>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soporte 24/7 con SLA garantizado</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Descarga de facturas CFDI</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Gestión de licencias y activos</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Reportes ejecutivos mensuales</span>
+                    </div>
+                </div>
+
+                <div class="stats-login">
+                    <div class="stat-login">
+                        <strong>500+</strong>
+                        <span>Empresas</span>
+                    </div>
+                    <div class="stat-login">
+                        <strong>99.8%</strong>
+                        <span>Uptime</span>
+                    </div>
+                    <div class="stat-login">
+                        <strong>15min</strong>
+                        <span>SLA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lado derecho: Formulario -->
+        <div class="login-form-wrapper">
+            <div class="login-form-container">
+                <div class="login-header">
+                    <h3>Iniciar Sesión</h3>
+                    <p>Ingresa a tu cuenta para continuar</p>
+                </div>
+
+                <!-- Tabs: Cliente / Admin -->
+                <div class="login-tabs">
+                    <button class="tab-btn active" data-type="cliente" onclick="cambiarTipo('cliente')">
+                        👤 Cliente
+                    </button>
+                    <button class="tab-btn" data-type="admin" onclick="cambiarTipo('admin')">
+                        🔐 Admin
+                    </button>
+                </div>
+
+                <form id="formLogin">
+                    <div class="form-group">
+                        <label>Email corporativo</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input
+                                type="email"
+                                id="email"
+                                required
+                                placeholder="tu@empresa.com"
+                                autocomplete="email"
+                            >
+                        </div>
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input
+                                type="password"
+                                id="password"
+                                required
+                                placeholder="••••••••"
+                                autocomplete="current-password"
+                            >
+                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                                <span id="eyeIcon">👁️</span>
+                            </button>
+                        </div>
+                        <span class="error-msg" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox">
+                            <input type="checkbox" id="recordarme">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#" class="forgot-link" onclick="recuperarPassword(event)">
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                    </div>
+
+                    <button type="submit" class="btn-login">
+                        <span id="btnText">Iniciar Sesión</span>
+                        <span id="loader" style="display:none;">
+                            <span class="spinner"></span> Validando...
+                        </span>
+                    </button>
+
+                    <div class="divider">
+                        <span>o</span>
+                    </div>
+
+                    <button type="button" class="btn-sso" onclick="loginMicrosoft()">
+                        <svg width="20" height="20" viewBox="0 0 21 21">
+                            <path fill="#f25022" d="M1 1h9v9H1z"/>
+                            <path fill="#00a4ef" d="M1 11h9v9H1z"/>
+                            <path fill="#7fba00" d="M11 1h9v9h-9z"/>
+                            <path fill="#ffb900" d="M11 11h9v9h-9z"/>
+                        </svg>
+                        Continuar con Microsoft
+                    </button>
+                </form>
+
+                <div class="login-footer">
+                    <p>¿No tienes cuenta?
+                        <a href="contacto.html">Solicita acceso</a>
+                    </p>
+                </div>
+
+                <div class="security-badge">
+                    <span class="badge-icon">🔒</span>
+                    <span>Conexión segura SSL 256-bit</span>
+                </div>
+            </div>
+
+            <div class="login-back">
+                <a href="index.html">← Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Recuperar Contraseña -->
+    <div class="modal" id="modalRecuperar">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Recuperar Contraseña</h3>
+                <button onclick="cerrarModalRecuperar()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p>Ingresa tu email corporativo y te enviaremos un enlace para restablecer tu contraseña.</p>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="emailRecuperar" placeholder="tu@empresa.com">
+                </div>
+                <button class="btn-modal" onclick="enviarRecuperacion()">
+                    Enviar enlace de recuperación
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>

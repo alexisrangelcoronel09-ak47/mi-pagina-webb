@@ -1,0 +1,152 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    padding: 40px 20px;
+    color: #1e293b;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2563eb;
+}
+
+header h1 {
+    color: #2563eb;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.acciones {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: #1e40af;
+}
+
+.btn-rojo {
+    background: #ef4444;
+}
+
+.btn-rojo:hover {
+    background: #dc2626;
+}
+
+.info-db {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-left: 4px solid #2563eb;
+    font-size: 0.95rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th {
+    background: #1e293b;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 700;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.completado {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.proceso {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.pendiente {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.btn-borrar {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-borrar:hover {
+    background: #dc2626;
+}
+
+footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .contenedor { padding: 20px; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 10px 5px; }
+}

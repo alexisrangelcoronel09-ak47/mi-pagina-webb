@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - NovaLogic | Soluciones IT Empresariales</title>
+    <link rel="stylesheet" href="servicios-style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>Amigo Pc</h1>
+                    <span>Enterprise Solutions</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="servicios.html" class="active">Servicios</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <a href="contacto.html" class="btn-header">Cotizar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-servicios">
+        <div class="container">
+            <span class="hero-tag">SERVICIOS</span>
+            <h2>Soluciones IT de Nivel Empresarial</h2>
+            <p>Desde soporte técnico hasta transformación digital completa. SLA garantizado.</p>
+        </div>
+    </section>
+
+    <section class="servicios-grid">
+        <div class="container">
+            <div class="grid" id="gridServicios"></div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h3>¿No encuentras lo que buscas?</h3>
+                <p>Desarrollamos soluciones personalizadas para tu empresa</p>
+                <a href="contacto.html" class="btn-cta">Agendar Consultoría Gratuita →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>Amigo Pc</h4>
+                    <p>Soluciones IT desde 2010</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacidad.html">Privacidad</a>
+                    <a href="terminos.html">Términos</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="casos-exito.html">Casos</a>
+                </div>
+            <div class="footer-bottom">
+                <p>© Amigo Pc S.A. de C.V.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Servicio -->
+    <div class="modal" id="modalServicio">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitulo">Servicio</h3>
+                <button onclick="cerrarModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <a href="contacto.html" class="btn-modal">Solicitar Cotización</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="servicios-script.js"></script>
+</body>
+</html>

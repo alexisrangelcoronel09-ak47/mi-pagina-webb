@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo PC - Bitácora de Servicios</title>
+    <link rel="stylesheet" href="css/bitacora.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>🖥️ Amigo PC</h1>
+            <p>Bitácora de Servicios - Proyecto Final 3er Parcial</p>
+        </header>
+
+        <div class="acciones">
+            <button class="btn" onclick="nuevoServicio()">+ Agregar Servicio</button>
+            <button class="btn btn-rojo" onclick="limpiarTodo()">Limpiar Bitácora</button>
+        </div>
+
+        <div class="info-db">
+            <strong>Base de Datos:</strong> LocalStorage simulando MySQL | 
+            <strong>Servidor:</strong> Apache
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Servicio</th>
+                    <th>Estatus</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaBitacora"></tbody>
+        </table>
+
+        <footer>
+            <p>Desarrollo de Maquetación: Página Soporte Técnico</p>
+            <a href="index.html">Volver</a>
+        </footer>
+    </div>
+
+    <script src="js/bitacora.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - NovaLogic Store</title>
+    <link rel="stylesheet" href="productos-style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>Amigo Pc</h1>
+                    <span>Store</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="productos.html" class="active">Productos</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <button class="cart-btn" onclick="toggleCarrito()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-store">
+        <div class="container">
+            <h2>Software y Licencias</h2>
+            <p>Compra directa. Entrega inmediata. Facturación CFDI.</p>
+        </div>
+    </section>
+
+    <section class="filters">
+        <div class="container">
+            <div class="filter-bar">
+                <input type="text" id="search" placeholder="Buscar...">
+                <div class="filter-tags">
+                    <button class="tag active" data-cat="todos">Todos</button>
+                    <button class="tag" data-cat="antivirus">Antivirus</button>
+                    <button class="tag" data-cat="office">Office</button>
+                    <button class="tag" data-cat="windows">Windows</button>
+                    <button class="tag" data-cat="software">Software</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="productos">
+        <div class="container">
+            <div class="grid" id="gridProductos"></div>
+        </div>
+    </section>
+
+    <!-- Carrito -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrito</h3>
+            <button onclick="toggleCarrito()">✕</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty">Carrito vacío</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotal">$0</strong>
+            </div>
+            <button class="btn-pagar" onclick="abrirCheckout()" disabled>Pagar Ahora</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Modal Pago -->
+    <div class="modal" id="modalPago">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Finalizar Compra</h3>
+                <button onclick="cerrarModal()">✕</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Razón Social / Nombre *</label>
+                    <input type="text" id="nombre" placeholder="Empresa S.A. de C.V.">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>RFC *</label>
+                        <input type="text" id="rfc" placeholder="XAXX010101000" maxlength="13">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" placeholder="tu@empresa.com">
+                    </div>
+                </div>
+
+                <h4>Método de Pago</h4>
+                <div class="payment-options">
+                    <label class="pay-option">
+                        <input type="radio" name="pago" value="tarjeta" checked>
+                        <span>💳 Tarjeta</span>
+                    </label>
+                    <label class="pay-option">
+                        <input type="radio" name="pago" value="paypal">
+                        <span>🅿️ PayPal</span>
+                    </label>
+                    <label class="pay-option">
+                        <input type="radio" name="pago" value="oxxo">
+                        <span>🏪 OXXO/SPEI</span>
+                    </label>
+                </div>
+
+                <div id="formTarjeta" class="form-pago">
+                    <input type="text" id="numTarjeta" placeholder="Número de tarjeta" maxlength="19">
+                    <div class="form-row">
+                        <input type="text" id="vencimiento" placeholder="MM/AA" maxlength="5">
+                        <input type="text" id="cvv" placeholder="CVV" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="resumen">
+                    <div id="resumenItems"></div>
+                    <div class="resumen-total">
+                        <span>Total:</span>
+                        <strong id="totalPagar">$0</strong>
+                    </div>
+                </div>
+
+                <button class="btn-confirmar" onclick="procesarCompra()">
+                    <span id="btnText">Confirmar Compra</span>
+                    <span id="loader" style="display:none;">Procesando...</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Éxito -->
+    <div class="modal" id="modalExito">
+        <div class="modal-content exito">
+            <div class="exito-icon">✓</div>
+            <h2>¡Compra Exitosa!</h2>
+            <p>Orden <strong id="numOrden">#0000</strong></p>
+            <p class="exito-msg">Recibirás tu factura CFDI y licencias por email en 5 minutos.</p>
+            <button class="btn-success" onclick="cerrarExito()">Seguir Comprando</button>
+        </div>
+    </div>
+
+    <script src="productos-script.js"></script>
+</body>
+</html>

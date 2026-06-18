@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de Éxito - NovaLogic | ROI Comprobado</title>
+    <link rel="stylesheet" href="casos-style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>NovaLogic</h1>
+                    <span>Enterprise Solutions</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="servicios.html">Servicios</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="casos-exito.html" class="active">Casos de Éxito</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <a href="contacto.html" class="btn-header">Ser el Próximo Caso</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-casos">
+        <div class="container">
+            <span class="hero-tag">PROBADO EN CAMPO</span>
+            <h2>Casos de Éxito con ROI Comprobado</h2>
+            <p>Empresas reales. Resultados auditables. Impacto medible en el negocio.</p>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <strong class="counter" data-target="500">0</strong><strong>+</strong>
+                    <span>Empresas</span>
+                </div>
+                <div class="stat-item">
+                    <strong class="counter" data-target="99.8">0</strong><strong>%</strong>
+                    <span>Satisfacción</span>
+                </div>
+                <div class="stat-item">
+                    <strong class="counter" data-target="300">0</strong><strong>%</strong>
+                    <span>ROI Promedio</span>
+                </div>
+                <div class="stat-item">
+                    <strong>15</strong><strong> min</strong>
+                    <span>SLA Respuesta</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filtros-casos">
+        <div class="container">
+            <div class="filtros-header">
+                <h4>Filtrar por:</h4>
+            </div>
+            <div class="filtros-bar">
+                <div class="filtro-group">
+                    <span class="filtro-label">Industria</span>
+                    <button class="filtro active" data-type="industria" data-value="todos">Todas</button>
+                    <button class="filtro" data-type="industria" data-value="manufactura">Manufactura</button>
+                    <button class="filtro" data-type="industria" data-value="retail">Retail</button>
+                    <button class="filtro" data-type="industria" data-value="finanzas">Finanzas</button>
+                    <button class="filtro" data-type="industria" data-value="salud">Salud</button>
+                    <button class="filtro" data-type="industria" data-value="educacion">Educación</button>
+                </div>
+                <div class="filtro-group">
+                    <span class="filtro-label">ROI</span>
+                    <button class="filtro" data-type="roi" data-value="todos">Todos</button>
+                    <button class="filtro" data-type="roi" data-value="200">+200%</button>
+                    <button class="filtro" data-type="roi" data-value="300">+300%</button>
+                    <button class="filtro" data-type="roi" data-value="400">+400%</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="casos-destacados">
+        <div class="container">
+            <div class="destacado-grid" id="casosDestacados"></div>
+        </div>
+    </section>
+
+    <section class="casos-grid">
+        <div class="container">
+            <div class="section-header">
+                <h3>Más Casos de Éxito</h3>
+            </div>
+            <div class="grid" id="gridCasos"></div>
+        </div>
+    </section>
+
+    <section class="video-testimonios">
+        <div class="container">
+            <div class="section-header">
+                <h3>Testimonios en Video</h3>
+                <p>Escucha directo de nuestros clientes</p>
+            </div>
+            <div class="videos-grid">
+                <div class="video-card" onclick="abrirVideo('mendoza')">
+                    <div class="video-thumb">
+                        <div class="play-btn">▶</div>
+                        <img src="https://i.pravatar.cc/400?img=12" alt="Carlos Mendoza">
+                    </div>
+                    <h4>Carlos Mendoza</h4>
+                    <p>CTO, Grupo Industrial Norte</p>
+                    <span class="video-duracion">2:34 min</span>
+                </div>
+                <div class="video-card" onclick="abrirVideo('gomez')">
+                    <div class="video-thumb">
+                        <div class="play-btn">▶</div>
+                        <img src="https://i.pravatar.cc/400?img=5" alt="Ana Gómez">
+                    </div>
+                    <h4>Ana Patricia Gómez</h4>
+                    <p>Dir. Operaciones, Retail Plus</p>
+                    <span class="video-duracion">1:52 min</span>
+                </div>
+                <div class="video-card" onclick="abrirVideo('valdes')">
+                    <div class="video-thumb">
+                        <div class="play-btn">▶</div>
+                        <img src="https://i.pravatar.cc/400?img=33" alt="Roberto Valdés">
+                    </div>
+                    <h4>Roberto Valdés</h4>
+                    <p>CISO, Financiera Capital</p>
+                    <span class="video-duracion">3:15 min</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resenas-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Reseñas Verificadas</h3>
+                <div class="rating-global">
+                    <div class="stars">★★★★★</div>
+                    <span class="rating-num">4.9/5.0</span>
+                    <span class="rating-count">basado en 127 reseñas</span>
+                </div>
+            </div>
+            <div class="resenas-grid" id="gridResenas"></div>
+        </div>
+    </section>
+
+    <section class="logos-section">
+        <div class="container">
+            <p class="logos-title">Empresas que confían en NovaLogic</p>
+            <div class="logos-carousel">
+                <div class="logos-track">
+                    <div class="logo-item">BIMBO</div>
+                    <div class="logo-item">CEMEX</div>
+                    <div class="logo-item">FEMSA</div>
+                    <div class="logo-item">GRUPO BAL</div>
+                    <div class="logo-item">ALFA</div>
+                    <div class="logo-item">TELEVISA</div>
+                    <div class="logo-item">GRUPO MÉXICO</div>
+                    <div class="logo-item">SORIANA</div>
+                    <div class="logo-item">LIVERPOOL</div>
+                    <div class="logo-item">BBVA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <div class="container">
+            <div class="cta-box">
+                <h3>Tu empresa puede ser el próximo caso de éxito</h3>
+                <p>Agenda una consultoría gratuita y descubre tu ROI potencial</p>
+                <a href="contacto.html" class="btn-cta">Calcular Mi ROI Gratis →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>NovaLogic</h4>
+                    <p>Transformando empresas con tecnología desde 2010</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacidad.html">Privacidad</a>
+                    <a href="terminos.html">Términos</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            <div class="footer-bottom">
+                <p>© 2026 NovaLogic S.A. de C.V. | Resultados auditables por KPMG</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Caso Detalle -->
+    <div class="modal" id="modalCaso">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="modalTitulo">Caso de Éxito</h3>
+                <button onclick="cerrarModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Modal Video -->
+    <div class="modal" id="modalVideo">
+        <div class="modal-content modal-video">
+            <button class="modal-close-video" onclick="cerrarVideo()">✕</button>
+            <div class="video-container" id="videoContainer"></div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="casos-script.js"></script>
+</body>
+</html>
